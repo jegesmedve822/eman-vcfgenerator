@@ -1,0 +1,258 @@
+html, body{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.header{
+    margin:0px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(89, 87, 86), rgb(245, 127, 32), rgb(254, 255, 252));
+}
+/*For fonts*/
+h1, h2, h3{
+    font-family: Roboto;
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 25px;
+}
+h3{
+    font-size: 15px;
+}
+.marker{
+    font-size: 20px;
+    font-weight: 500;
+}
+.data{
+    font-size: 20px;
+    color: rgb(89, 87, 86);
+    font-weight: 400;
+    font-style: italic;
+}
+.anchor{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*The whole page*/
+.container{
+    min-height: 100vh;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*logo element*/
+.logo-around{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid black;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    display: flex;
+}
+
+
+/*the two buttons displaying the telephone and the mail icon*/
+.icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 5px solid black;
+}
+
+.icon-pic{
+    width:70px;
+    height: 70px;
+    border-radius: 100%;
+
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+/*Arranging the header section*/
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.name{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.title{
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+/*------------------------------------------------*/
+/*Body section*/
+/*reducing the size of the pictograms*/
+.pictogram{
+    width: 30px;
+    height: 30px;
+}
+
+/*Creating grid-boxes for the body section*/
+/*Telefon*/
+.telefon, .email, .weboldal{
+    display:grid;
+    grid-template-columns: 50px 220px;
+    grid-template-rows: 20px 20px;
+    gap: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.foglalkozas{
+    display: grid;
+    grid-template-columns: 50px 220px;
+    grid-template-rows: 20px;
+    gap: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.grid-1-1, .grid-2-1, .grid-3-1{
+    grid-area: 1 / 1 / 3 /2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid-1-2, .grid-2-2, .grid-3-2{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid-1-3, .grid-2-3, .grid-3-3{
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-4-1{
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid-4-2{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for the button*/
+
+@keyframes redToYellowCycle {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .generate-vcf {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 1px 2;
+    border: none;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .generate-vcf::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 10px;
+    
+    background: linear-gradient(
+      90deg,
+      #ff0000,
+      #f57f20,
+      #f8c303,
+      #f57f20,
+      #ff0000
+    );
+    background-size: 400% 400%;
+    filter: blur(5px);
+    animation: redToYellowCycle 5s linear infinite;
+  }
+  
+ 
+  .generate-vcf::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000; 
+  }
+
+  .generate-vcf:hover {
+    background-color: rgb(245, 127, 32);
+  }
+  
+  .generate-vcf:active {
+    transform: scale(0.95);
+  }
+footer{
+    height: 10vh;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(89, 87, 86));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+  
